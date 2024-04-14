@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+    <h1>Search</h1>
+    <form action="/search" method="POST">
+        <label for="search_query">Search Query:</label>
+        <input type="text" id="search_query" name="search_query" required>
+        <br>
+        <input type="radio" id="ruler" name="search_option" value="ruler" required>
+        <label for="ruler">Search by Ruler</label>
+        <input type="radio" id="title" name="search_option" value="title" required>
+        <label for="title">Search by Title</label>
+        <br>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if results %}
+    <h2>Search Results</h2>
+    <ul>
+        {% for result in results %}
+        <li>{{ result }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>

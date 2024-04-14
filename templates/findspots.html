@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mints Map</title>
+    <!-- Include Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        #info {
+            background-color: #f9f9f9;
+            padding: 20px;
+            width: 80%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #map-container {
+            width: 80%;
+            position: relative;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Find Spots</h1>
+            <p>Explore Find Spots around Europe</p>
+        </div>
+        <!-- Additional info section -->
+        <div id="info">
+            <h2>What are Findspots?</h2>
+            <p>A findspot is a location where an archaeological artifact or ancient coin was discovered. These spots provide valuable insights into historical and cultural contexts</p>
+            <p>Explore the map below to discover the locations of ancient findspots.</p>
+        </div>
+        <!-- Map container -->
+        <div id="map-container">
+            <!-- Display the map -->
+            <div id="map">{{ n_html | safe }}</div>
+        </div>
+    </div>
+
+    <!-- Include Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</body>
+</html>
